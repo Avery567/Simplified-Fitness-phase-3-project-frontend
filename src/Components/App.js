@@ -1,4 +1,4 @@
-import Header from "./Header";
+// import Header from "./Header";
 import LandingPage from "./LandingPage";
 import MainPage from "./MainPage";
 
@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       
-      <Header />
+      {/* <Header /> */}
       <Route exact path = "/">
         <LandingPage />
       </Route>

@@ -1,6 +1,7 @@
 import RoutinesContainer from "./RoutinesContainer";
 import DisplayDetails from "./DisplayDetails";
 import React, { useEffect, useState } from "react";
+import Header from "./Header";
 
 function MainPage () {
 
@@ -16,7 +17,8 @@ function MainPage () {
   console.log(routines)
 
     return (
-    <>
+    <>  
+        <Header />
         <RoutinesContainer routines={routines}/>
         <h1>This is the Main Page!!!!!!!!</h1>
         <DisplayDetails />
