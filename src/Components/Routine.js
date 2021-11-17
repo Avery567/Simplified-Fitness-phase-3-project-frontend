@@ -4,7 +4,7 @@ import styled from "styled-components";
 function Routine ({routine}) {
     return (
     <RoutineBox>
-        <img alt= "muscle-group" src={routine.image}/>
+        <img alt= "muscle-group" src={routine.routine_image}/>
         <h3>{routine.routine_name}</h3>
         <RoutineContent>Focus: {routine.muscle_group}</RoutineContent>
         <DetailButton>See Exercises</DetailButton>
@@ -15,10 +15,10 @@ function Routine ({routine}) {
 export default Routine;
 
 const RoutineBox = styled.div`
-    overflow: hidden;
+    // overflow-y: auto;
     margin: 48px auto 0;
     width: 350px;
-    height: 500px;
+    height: 550px;
     font-family: Quicksand, arial, sans-serif;
     // box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);color: black;
     font-size: 1em;
@@ -63,6 +63,8 @@ const RoutineContent = styled.h5`
     border: 2px solid WHITE;
     border-radius: 3px;
     cursor: pointer;
+    width: 16em;
+    margin: auto;
     box-shadow: 0 0 3px gray;
     &:hover {
         outline: none;
