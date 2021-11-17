@@ -12,6 +12,7 @@ function CreateRoutineForm ({handleAddRoutine}) {
 
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]:e.target.value})
+        e.target.reset()
         console.log(e.target.value)
     }
 
@@ -19,6 +20,7 @@ function CreateRoutineForm ({handleAddRoutine}) {
         const newRoutine = {...formData}
         e.preventDefault() 
         handleAddRoutine(newRoutine)
+ 
     }
 
 
@@ -30,7 +32,8 @@ function CreateRoutineForm ({handleAddRoutine}) {
 
             <div>
                 <label htmlFor='MuscleGroup' > Muscle Group: </label>
-                <input  type='text' id='MuscleGroup' name='muscle_group' placeholder='Muscle Group here...' value={formData.muscle_group} onChange={handleChange}></input>
+                <input  type='text' id='MuscleGroup' name='muscle_group' placeholder='Muscle Group here...' value={formData.muscle_group} onChange={handleChange}>
+                </input>
             </div>
 
             <div>
@@ -41,11 +44,12 @@ function CreateRoutineForm ({handleAddRoutine}) {
             <label htmlFor='image'> Picture URL: </label>
             <input id='imageInput' type='url' name='routine_image' placeholder='Image here...' value={formData.routine_image} onChange={handleChange}></input>
             <div className="button-div">
-                <button onClick={handleSubmit}>Add Routine! </button>
+                <button type="reset" onClick={handleSubmit}>Add Routine! </button>
             </div>
         </form>
     </>
 
-    )}
+    );
+}
 
 export default CreateRoutineForm

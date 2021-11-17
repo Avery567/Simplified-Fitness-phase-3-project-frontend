@@ -6,7 +6,7 @@ function Routine ({routine}) {
     <RoutineBox>
         <img alt= "muscle-group" src={routine.routine_image}/>
         <h3>{routine.routine_name}</h3>
-        <RoutineContent>Focus: {routine.muscle_group}</RoutineContent>
+        <RoutineContent>Focus: {routine.muscle_group} Routine ID: {routine.id}</RoutineContent>
         <DetailButton>See Exercises</DetailButton>
         
     </RoutineBox>

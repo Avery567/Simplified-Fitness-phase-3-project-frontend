@@ -9,6 +9,7 @@ import CreateExerciseForm from "./CreateExerciseForm";
 function MainPage () {
 
     const [routines, setRoutines] = useState([])
+    const [exercises, setExercise] = useState([])
 
     useEffect(() => {
         fetch("http://localhost:9292/routines")
@@ -17,8 +18,16 @@ function MainPage () {
         setRoutines(routines)
         })
     }, [])
-    // console.log(routines)
 
+    // useEffect(() => {
+    //     fetch("http://localhost:9292/exercises")
+    //     .then(r => r.json())
+    //     .then((exercises) => {
+    //     setRoutines(exercises)
+    //     })
+    // }, [])
+
+    // Handle Add Routine
     const handleAddRoutine = (newRoutine) => {
         const updatedRoutines =  [newRoutine, ...routines]
         fetch('http://localhost:9292/routines', {
@@ -31,13 +40,27 @@ function MainPage () {
         .then(setRoutines(updatedRoutines))
         .then(console.log(updatedRoutines))
     }
+    
+    // Handle Add Exercise
+    const handleAddExercise = (newExercise) => {
+        const updatedExercises =  [newExercise, ...exercises]
+        fetch('http://localhost:9292/exercises', {
+            method:'POST',
+            headers: {
+                'Content-Type':'application/json',
+            },
+            body: JSON.stringify(newExercise)
+        }) 
+        .then(setExercise(updatedExercises))
+        .then(console.log(updatedExercises))
+    }
 
     return (
         <>
             <Styleddiv>
             <Header />  
             <CreateRoutineForm handleAddRoutine={handleAddRoutine}/>
-            <CreateExerciseForm />
+            <CreateExerciseForm handleAddExercise={handleAddExercise}/>
             <RoutinesContainer routines={routines}/>
             <DisplayDetails />
             </Styleddiv>
