@@ -1,5 +1,4 @@
 import Routine from "./Routine";
-import CreateRoutineForm from "./CreateRoutineForm";
 import styled from "styled-components";
 
 function RoutinesContainer ({routines}) {
@@ -10,7 +9,6 @@ function RoutinesContainer ({routines}) {
                 key={routine.id} 
                 routine={routine}
                 />)}
-            <CreateRoutineForm />
         </GridLayout>
     )}
 

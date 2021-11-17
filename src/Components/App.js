@@ -3,7 +3,7 @@ import LandingPage from "./LandingPage";
 import MainPage from "./MainPage";
 
 // Import Hooks
-import {Route, Link} from "react-router-dom";
+import {Route} from "react-router-dom";
 // import React, { useEffect, useState } from "react";
 
 

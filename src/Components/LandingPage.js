@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 // import Button from "react-bootstrap/Button";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from "./Header";
+
 
 function LandingPage () {
     return (
@@ -47,8 +47,8 @@ const Button = styled.button`
         outline: none;
         transform: scale(1.05);
     }
-    margin-left: 1300px
-`;
+    margin-left: 1300px;
+`
 
 const LandingHeaderContainer = styled.div`
     display:flex;
