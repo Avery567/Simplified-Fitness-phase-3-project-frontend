@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./Header";
 
@@ -8,11 +8,12 @@ function LandingPage () {
     return (
     <div >
     <Styleddiv>
-    <Header />
+ 
     <Link to="/mainpage">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
-        <Button variant="success">See my routines!</Button>
+        <Button> My Routines</Button>
     </Link>
+
+    <LandingHeaderContainer>Simplified Fitness</LandingHeaderContainer>
     </Styleddiv>
     </div>
     )}
@@ -21,14 +22,39 @@ export default LandingPage
 
 const Styleddiv = styled.div`
 
-background: url("https://images.everydayhealth.com/images/how-to-start-working-out-again-derailed-from-covid-1440x810.jpg");
-position: fixed;
-min-width: 100%;
-min-height: 100%;
-background-size: contain;
-background-position: cover;
+    background: url("https://images.everydayhealth.com/images/how-to-start-working-out-again-derailed-from-covid-1440x810.jpg");
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: contain;
+    background-position: cover;
+    h1{
+        justify-content: center;
+    }
+`
+const Button = styled.button`
+    background: ${props => props.primary ? "palevioletred" : "white"};
+    color: ${props => props.primary ? "white" : "palevioletred"};
+    font-family: 'Lobster', cursive;
+    font-size: 1.25em;
+    margin: 2em;
+    padding: 0.25em 1em;
+    border: 2px solid WHITE;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0 0 3px gray;
+    &:hover {
+        outline: none;
+        transform: scale(1.05);
+    }
+    margin-left: 1300px
+`;
 
-h1{
-    justify-content: center;
-}
+const LandingHeaderContainer = styled.div`
+    display:flex;
+    justify-content:space-around;
+    font-family: 'Lobster', cursive;
+    color: white;
+    font-size: 10em;
+    margin: o.5em;
 `

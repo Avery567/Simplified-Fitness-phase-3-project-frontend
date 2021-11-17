@@ -1,4 +1,5 @@
 import RoutinesContainer from "./RoutinesContainer";
+import styled from "styled-components";
 import DisplayDetails from "./DisplayDetails";
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
@@ -17,13 +18,24 @@ function MainPage () {
   console.log(routines)
 
     return (
-    <>  
-        <Header />
+    <Styleddiv>  
+        <Header/>        
+ 
         <RoutinesContainer routines={routines}/>
-        <h1>This is the Main Page!!!!!!!!</h1>
         <DisplayDetails />
-    </>
+    </Styleddiv>
 
     )}
 
-export default MainPage
+export default MainPage;
+
+const Styleddiv = styled.div`
+
+    background: url("https://images.everydayhealth.com/images/how-to-start-working-out-again-derailed-from-covid-1440x810.jpg");
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: contain;
+    background-position: cover;
+`
+
