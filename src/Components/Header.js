@@ -1,12 +1,19 @@
 import styled from "styled-components";
+import {Link} from "react-router-dom"
 
 function Header () {
     return (
     <HeaderContainer>
         Simplified Fitness
-        <NewButton>Home</NewButton>
-        <NewButton>Design New Routine</NewButton>
+        <Link to="/">
+          <NewButton>Home</NewButton>
+        </Link>
+        <Link to="/newroutine">
+            <NewButton>Design New Routine</NewButton>
+        </Link>
+        <Link to="/newexercise">
         <NewButton>Add New Exercises</NewButton>
+        </Link>
     </HeaderContainer>
 
     )}
@@ -19,7 +26,7 @@ const HeaderContainer = styled.div`
     color: black;
     text-align: center;
     font-size: 3.5em;
-
+    margin: 0.1em;
 `;
 
 const NewButton = styled.button`

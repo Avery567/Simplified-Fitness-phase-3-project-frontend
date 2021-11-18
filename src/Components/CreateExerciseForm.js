@@ -1,7 +1,9 @@
 import {useState} from "react"
+import {Link} from "react-router-dom"
 
 
 function CreateExerciseForm ({handleAddExercise}) {
+    console.log(handleAddExercise)
     const [formData, setFormData] = useState({
         name: '',
         instructions: '',
@@ -11,7 +13,7 @@ function CreateExerciseForm ({handleAddExercise}) {
 
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]:e.target.value})
-        console.log(e.target.value)
+        // console.log(e.target.value)
     }
 
     const handleSubmit = (e) => {
@@ -78,12 +80,14 @@ function CreateExerciseForm ({handleAddExercise}) {
                     value={formData.routine_id}
                     onChange={handleChange}/>
             </div>
+           
             <div className="button-div">
-                <button> Add Exercise! </button>
+            <button type="reset" onClick={handleSubmit}>Add Exercise </button>
             </div>
+            
         </form>
     </>
     );
 }
 
-export default CreateExerciseForm
+export default CreateExerciseForm;

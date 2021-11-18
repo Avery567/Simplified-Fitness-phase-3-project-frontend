@@ -5,63 +5,16 @@ import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import CreateRoutineForm from "./CreateRoutineForm";
 import CreateExerciseForm from "./CreateExerciseForm";
+import {Route} from 'react-router-dom';
 
-function MainPage () {
 
-    const [routines, setRoutines] = useState([])
-    const [exercises, setExercise] = useState([])
-
-    useEffect(() => {
-        fetch("http://localhost:9292/routines")
-        .then(r => r.json())
-        .then((routines) => {
-        setRoutines(routines)
-        })
-    }, [])
-
-    // useEffect(() => {
-    //     fetch("http://localhost:9292/exercises")
-    //     .then(r => r.json())
-    //     .then((exercises) => {
-    //     setRoutines(exercises)
-    //     })
-    // }, [])
-
-    // Handle Add Routine
-    const handleAddRoutine = (newRoutine) => {
-        const updatedRoutines =  [newRoutine, ...routines]
-        fetch('http://localhost:9292/routines', {
-            method:'POST',
-            headers: {
-                'Content-Type':'application/json',
-            },
-            body: JSON.stringify(newRoutine)
-        }) 
-        .then(setRoutines(updatedRoutines))
-        .then(console.log(updatedRoutines))
-    }
-    
-    // Handle Add Exercise
-    const handleAddExercise = (newExercise) => {
-        const updatedExercises =  [newExercise, ...exercises]
-        fetch('http://localhost:9292/exercises', {
-            method:'POST',
-            headers: {
-                'Content-Type':'application/json',
-            },
-            body: JSON.stringify(newExercise)
-        }) 
-        .then(setExercise(updatedExercises))
-        .then(console.log(updatedExercises))
-    }
+function MainPage ({routines, handleDelete}) {
 
     return (
         <>
             <Styleddiv>
             <Header />  
-            <CreateRoutineForm handleAddRoutine={handleAddRoutine}/>
-            <CreateExerciseForm handleAddExercise={handleAddExercise}/>
-            <RoutinesContainer routines={routines}/>
+            <RoutinesContainer routines={routines} handleDelete={handleDelete}/>
             <DisplayDetails />
             </Styleddiv>
         </>
@@ -78,5 +31,5 @@ const Styleddiv = styled.div`
     min-height: 100%;
     background-size: contain;
     background-position: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
 `

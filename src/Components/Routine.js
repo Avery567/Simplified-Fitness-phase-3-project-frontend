@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
 
-function Routine ({routine}) {
+function Routine ({routine, handleDelete}) {
     return (
+
     <RoutineBox>
-        <img alt= "muscle-group" src={routine.routine_image}/>
+        {/* <img alt= "muscle-group" src={routine.routine_image}/> */}
         <h3>{routine.routine_name}</h3>
-        <RoutineContent>Focus: {routine.muscle_group} Routine ID: {routine.id}</RoutineContent>
-        <DetailButton>See Exercises</DetailButton>
+        <RoutineContent>
+            <li>Routine ID: {routine.id}</li>
+            Focus: {routine.muscle_group} 
+        </RoutineContent>
+        <DetailButton>Details</DetailButton>
+        <DetailButton onClick={() => handleDelete(routine.id)}>Delete</DetailButton>
         
     </RoutineBox>
     )}
@@ -15,17 +20,14 @@ function Routine ({routine}) {
 export default Routine;
 
 const RoutineBox = styled.div`
-    // overflow-y: auto;
     margin: 48px auto 0;
     width: 350px;
-    height: 550px;
-    font-family: Quicksand, arial, sans-serif;
-    // box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);color: black;
+    height: 200px;
+    font-family: Quicksand, arial, sans-serif; 
     font-size: 1em;
     padding: 0.25em 1em;
     border: 2px solid palevioletred;
     border-radius: 3px;
-    // background: white;
     border: 2px solid WHITE;
     cursor: pointer;
     box-shadow: 0 0 3px gray;
@@ -41,8 +43,8 @@ const DetailButton = styled.button`
     color: ${props => props.primary ? "white" : "black"};
     font-family: 'Lobster', cursive;
     font-size: 1.25em;
-    margin: 2em;
-    padding: 0.25em 1em;
+    margin: 0.5em;
+    padding: 0.01em 0.5em;
     border: 2px solid WHITE;
     border-radius: 3px;
     cursor: pointer;
@@ -57,13 +59,15 @@ const RoutineContent = styled.h5`
     // background: ${props => props.primary ? "black" : "white"};
     color: ${props => props.primary ? "white" : "black"};
     font-family: 'Montagu Slab', serif;
-    font-size: 1.25em;
+    font-size: 1em;
     margin: 2em;
     padding: 0.25em 1em;
+    overflow-y: auto;
     border: 2px solid WHITE;
     border-radius: 3px;
     cursor: pointer;
-    width: 16em;
+    width: 20em;
+    height:6em;
     margin: auto;
     box-shadow: 0 0 3px gray;
     &:hover {

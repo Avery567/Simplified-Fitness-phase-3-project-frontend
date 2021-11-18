@@ -1,7 +1,10 @@
 import {useState} from "react"
 // import styled from "styled-components"
+import {Link} from "react-router-dom"
 
 function CreateRoutineForm ({handleAddRoutine}) {
+    // const handleAddRoutine = ""
+    // console.log(props)
     const [formData, setFormData] = useState({
         routine_name: '',
         muscle_group: '',
@@ -11,20 +14,29 @@ function CreateRoutineForm ({handleAddRoutine}) {
 
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]:e.target.value})
-        console.log(e.target.value)
+        // console.log(e.target.value)
     }
 
     const handleSubmit = (e) => {
         const newRoutine = {...formData}
         e.preventDefault() 
         handleAddRoutine(newRoutine)
-        e.target.reset()
+        reset()
     }
 
+    const reset = () => {
+        setFormData({
+            routine_name: '',
+            muscle_group: '',
+            personal_trainer_id: '',
+            routine_image: ''
+
+        })
+    }
 
     return (
     <>
-        <form>
+        <form onSubmit={handleSubmit}>
             <label htmlFor='RoutineName'> Routine Name: </label>
             <input id='RoutineName' type ='text' name='routine_name' placeholder='Routine name here...' value={formData.routine_name} onChange={handleChange}></input>
 
@@ -42,7 +54,7 @@ function CreateRoutineForm ({handleAddRoutine}) {
             <label htmlFor='image'> Picture URL: </label>
             <input id='imageInput' type='url' name='routine_image' placeholder='Image here...' value={formData.routine_image} onChange={handleChange}></input>
             <div className="button-div">
-                <button type="reset" onClick={handleSubmit}>Add Routine! </button>
+                <button type="reset" onClick={handleSubmit}>Add Routine </button>
             </div>
         </form>
     </>
@@ -50,4 +62,4 @@ function CreateRoutineForm ({handleAddRoutine}) {
     );
 }
 
-export default CreateRoutineForm
+export default CreateRoutineForm;
