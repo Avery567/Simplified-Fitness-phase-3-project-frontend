@@ -3,7 +3,6 @@ import {useState} from "react"
 
 function CreateRoutineForm ({handleAddRoutine}) {
     const [formData, setFormData] = useState({
-        id: Math.floor(Math.random() * 1000),
         routine_name: '',
         muscle_group: '',
         personal_trainer_id: '',
@@ -12,7 +11,6 @@ function CreateRoutineForm ({handleAddRoutine}) {
 
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]:e.target.value})
-        e.target.reset()
         console.log(e.target.value)
     }
 
@@ -20,7 +18,7 @@ function CreateRoutineForm ({handleAddRoutine}) {
         const newRoutine = {...formData}
         e.preventDefault() 
         handleAddRoutine(newRoutine)
- 
+        e.target.reset()
     }
 
 
