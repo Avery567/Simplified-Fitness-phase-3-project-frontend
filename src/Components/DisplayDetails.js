@@ -14,11 +14,12 @@ function DisplayDetails () {
 export default DisplayDetails;
 
 const Layout = styled.div`
-    // display: flex;
-    width: 300 em;
+    width: 250 em;
     height: 300 em;
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 3px;
     box-shadow: 0 0 3px gray;
     float:right;
+    text-align: center;
+    margin: 1rem 7rem 1rem 0;
 `;

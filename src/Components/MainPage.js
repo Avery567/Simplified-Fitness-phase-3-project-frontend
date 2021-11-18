@@ -15,7 +15,7 @@ function MainPage ({routines, handleDelete}) {
             <Styleddiv>
             <Header />  
             <RoutinesContainer routines={routines} handleDelete={handleDelete}/>
-            <DisplayDetails />
+            
             </Styleddiv>
         </>
     );
@@ -24,12 +24,12 @@ function MainPage ({routines, handleDelete}) {
 export default MainPage;
 
 const Styleddiv = styled.div`
-
+    
     background: url("https://images.everydayhealth.com/images/how-to-start-working-out-again-derailed-from-covid-1440x810.jpg");
     position: fixed;
     min-width: 100%;
     min-height: 100%;
-    background-size: contain;
+    background-size: cover;
     background-position: cover;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
 `
