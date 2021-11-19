@@ -38,55 +38,50 @@ function CreateExerciseForm ({handleAddExercise}) {
         <Header />
         <Layout>
             <form onSubmit={handleSubmit}>
-            <Styleddiv>
-                <label htmlFor='ExerciseName'> Exercise Name: </label>            
-                <input 
-                    id='ExerciseName' 
-                    type ='text' 
-                    name='name' 
-                    placeholder='Exercise name here...' 
-                    value={formData.name}
-                    onChange={handleChange}>
-                </input>
-            </Styleddiv>
-            <Styleddiv>
-                <label htmlFor='Instructions' > Instructions: </label>
-                <input  
-                    type='text' 
-                    id='Instructions' 
-                    name='instructions' 
-                    placeholder='Instructions here...'
-                    value={formData.instructions}
-                    onChange={handleChange}>
-                </input>
-            </Styleddiv>
-            <Styleddiv>
-                <label htmlFor='PersonalTrainerId'> Personal Trainer ID: </label>
-                <input 
-                    type='number' 
-                    id='PersonalTrainerId' 
-                    name='personal_trainer_id' 
-                    placeholder='Personal Trainer ID here...'
-                    value={formData.personal_trainer_id}
-                    onChange={handleChange}>                    
-                </input>
-            </Styleddiv>
-            <Styleddiv>
-                <label htmlFor='RoutineId'> Routine ID: </label>
-                <input 
-                    type='number' 
-                    id='RoutineId' 
-                    name='routine_id' 
-                    placeholder='Routine ID here...' 
-                    value={formData.routine_id}
-                    onChange={handleChange}/>
-            </Styleddiv>
-            
-            
-                <div className="button-div">
+                <Styleddiv>
+                    <label htmlFor='ExerciseName'> Exercise Name: </label>            
+                    <input 
+                        id='ExerciseName' 
+                        type ='text' 
+                        name='name' 
+                        placeholder='Exercise name here...' 
+                        value={formData.name}
+                        onChange={handleChange}>
+                    </input>
+                </Styleddiv>
+                <Styleddiv>
+                    <label htmlFor='Instructions' > Instructions: </label>
+                    <input  
+                        type='text' 
+                        id='Instructions' 
+                        name='instructions' 
+                        placeholder='Instructions here...'
+                        value={formData.instructions}
+                        onChange={handleChange}>
+                    </input>
+                </Styleddiv>
+                <Styleddiv>
+                    <label htmlFor='PersonalTrainerId'> Personal Trainer ID: </label>
+                    <input 
+                        type='number' 
+                        id='PersonalTrainerId' 
+                        name='personal_trainer_id' 
+                        placeholder='Personal Trainer ID here...'
+                        value={formData.personal_trainer_id}
+                        onChange={handleChange}>                    
+                    </input>
+                </Styleddiv>
+                <Styleddiv>
+                    <label htmlFor='RoutineId'> Routine ID: </label>
+                    <input 
+                        type='number' 
+                        id='RoutineId' 
+                        name='routine_id' 
+                        placeholder='Routine ID here...' 
+                        value={formData.routine_id}
+                        onChange={handleChange}/>
+                </Styleddiv>
                 <DetailButton type="reset" onClick={handleSubmit}>Add Exercise </DetailButton>
-                </div>
-                
             </form>
         </Layout>
         </BackgroundImage>

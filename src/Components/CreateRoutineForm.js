@@ -4,8 +4,7 @@ import Header from "./Header";
 
 
 function CreateRoutineForm ({handleAddRoutine}) {
-    // const handleAddRoutine = ""
-    // console.log(props)
+    
     const [formData, setFormData] = useState({
         routine_name: '',
         muscle_group: '',
@@ -15,7 +14,6 @@ function CreateRoutineForm ({handleAddRoutine}) {
 
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]:e.target.value})
-        // console.log(e.target.value)
     }
 
     const handleSubmit = (e) => {

@@ -1,11 +1,7 @@
 import RoutinesContainer from "./RoutinesContainer";
 import styled from "styled-components";
-import DisplayDetails from "./DisplayDetails";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "./Header";
-import CreateRoutineForm from "./CreateRoutineForm";
-import CreateExerciseForm from "./CreateExerciseForm";
-import {Route} from 'react-router-dom';
 
 
 function MainPage ({routines, handleDelete}) {

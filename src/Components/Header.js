@@ -36,7 +36,6 @@ const NewButton = styled.button`
     color: ${props => props.primary ? "white" : "black"};
     font-family: 'Lobster', cursive;
     font-size: 0.4em;
-    // margin: 1em;
     padding: 0.2em 1em;
     border: 2px solid WHITE;
     border-radius: 3px;

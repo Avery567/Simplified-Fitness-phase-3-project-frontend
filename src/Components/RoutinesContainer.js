@@ -4,8 +4,9 @@ import styled from "styled-components";
 import { useState } from "react";
 
 function RoutinesContainer ({routines,handleDelete}) {
-    // console.log(routines)
+
     const [routineExercises, setRoutineExercises] = useState([])
+
     const displayDetails = (routineExercises) => {
         setRoutineExercises(routineExercises)
     }

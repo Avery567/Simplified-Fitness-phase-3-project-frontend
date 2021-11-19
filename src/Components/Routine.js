@@ -2,18 +2,22 @@ import styled from "styled-components";
 
 
 function Routine ({routine, handleDelete, displayDetails}) {
-    
+
     return (
         <RoutineBox>
-        <h3>{routine.routine_name}</h3>
-        <RoutineContent>
-            <li>Routine ID: {routine.id}</li>
-            Focus: {routine.muscle_group} 
-        </RoutineContent>
-        <DetailButton onClick={() => displayDetails(routine.exercises)}>Details</DetailButton>
-        <DetailButton onClick={() => handleDelete(routine.id)}>Delete</DetailButton>
+            <h3 style={{fontSize: "1.30em" }}>{routine.routine_name}</h3>
+            <RoutineContent>
+                <li>Routine ID: {routine.id}</li>
+                Focus: {routine.muscle_group} 
+            </RoutineContent>
+            <DetailButton onClick={() => {
+                const routineAndExercises = [routine.routine_image, ...routine.exercises]
+                displayDetails(routineAndExercises)}}>
+                Details
+            </DetailButton>
+            <DetailButton onClick={() => handleDelete(routine.id)}>Delete</DetailButton>
         
-    </RoutineBox>
+        </RoutineBox>
     )}
     
 export default Routine;
@@ -55,7 +59,6 @@ const DetailButton = styled.button`
 `;
 
 const RoutineContent = styled.h5`
-    // background: ${props => props.primary ? "black" : "white"};
     color: ${props => props.primary ? "white" : "black"};
     font-family: 'Montagu Slab', serif;
     font-size: 1em;
