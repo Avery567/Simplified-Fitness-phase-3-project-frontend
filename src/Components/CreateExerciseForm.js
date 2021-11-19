@@ -2,7 +2,6 @@ import {useState} from "react"
 import Header from "./Header"
 import styled from "styled-components"
 
-
 function CreateExerciseForm ({handleAddExercise}) {
 
     const [formData, setFormData] = useState({
@@ -14,14 +13,12 @@ function CreateExerciseForm ({handleAddExercise}) {
 
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]:e.target.value})
-        // console.log(e.target.value)
     }
 
     const handleSubmit = (e) => {
         const newExercise = {...formData}
         e.preventDefault() 
         handleAddExercise(newExercise)
-        console.log(e.target)
         reset()
     }
 
@@ -35,63 +32,64 @@ function CreateExerciseForm ({handleAddExercise}) {
     }
 
     return (
+
     <>
-    <BackgroundImage>
-    <Header />
-    <Layout>
-        <form onSubmit={handleSubmit}>
-        <Styleddiv>
-            <label htmlFor='ExerciseName'> Exercise Name: </label>            
-            <input 
-                id='ExerciseName' 
-                type ='text' 
-                name='name' 
-                placeholder='Exercise name here...' 
-                value={formData.name}
-                onChange={handleChange}>
-            </input>
-        </Styleddiv>
-        <Styleddiv>
-            <label htmlFor='Instructions' > Instructions: </label>
-            <input  
-                type='text' 
-                id='Instructions' 
-                name='instructions' 
-                placeholder='Instructions here...'
-                value={formData.instructions}
-                onChange={handleChange}>
-            </input>
-        </Styleddiv>
-        <Styleddiv>
-            <label htmlFor='PersonalTrainerId'> Personal Trainer ID: </label>
-            <input 
-                type='number' 
-                id='PersonalTrainerId' 
-                name='personal_trainer_id' 
-                placeholder='Personal Trainer ID here...'
-                value={formData.personal_trainer_id}
-                onChange={handleChange}>                    
-            </input>
-        </Styleddiv>
-        <Styleddiv>
-            <label htmlFor='RoutineId'> Routine ID: </label>
-            <input 
-                type='number' 
-                id='RoutineId' 
-                name='routine_id' 
-                placeholder='Routine ID here...' 
-                value={formData.routine_id}
-                onChange={handleChange}/>
-        </Styleddiv>
-        
-           
-            <div className="button-div">
-            <DetailButton type="reset" onClick={handleSubmit}>Add Exercise </DetailButton>
-            </div>
+        <BackgroundImage>
+        <Header />
+        <Layout>
+            <form onSubmit={handleSubmit}>
+            <Styleddiv>
+                <label htmlFor='ExerciseName'> Exercise Name: </label>            
+                <input 
+                    id='ExerciseName' 
+                    type ='text' 
+                    name='name' 
+                    placeholder='Exercise name here...' 
+                    value={formData.name}
+                    onChange={handleChange}>
+                </input>
+            </Styleddiv>
+            <Styleddiv>
+                <label htmlFor='Instructions' > Instructions: </label>
+                <input  
+                    type='text' 
+                    id='Instructions' 
+                    name='instructions' 
+                    placeholder='Instructions here...'
+                    value={formData.instructions}
+                    onChange={handleChange}>
+                </input>
+            </Styleddiv>
+            <Styleddiv>
+                <label htmlFor='PersonalTrainerId'> Personal Trainer ID: </label>
+                <input 
+                    type='number' 
+                    id='PersonalTrainerId' 
+                    name='personal_trainer_id' 
+                    placeholder='Personal Trainer ID here...'
+                    value={formData.personal_trainer_id}
+                    onChange={handleChange}>                    
+                </input>
+            </Styleddiv>
+            <Styleddiv>
+                <label htmlFor='RoutineId'> Routine ID: </label>
+                <input 
+                    type='number' 
+                    id='RoutineId' 
+                    name='routine_id' 
+                    placeholder='Routine ID here...' 
+                    value={formData.routine_id}
+                    onChange={handleChange}/>
+            </Styleddiv>
             
-        </form>
-    </Layout>
-    </BackgroundImage>
+            
+                <div className="button-div">
+                <DetailButton type="reset" onClick={handleSubmit}>Add Exercise </DetailButton>
+                </div>
+                
+            </form>
+        </Layout>
+        </BackgroundImage>
     </>
     );
 }
@@ -106,8 +104,7 @@ const BackgroundImage = styled.div`
     min-height: 100%;
     background-size: cover;
     background-position: cover;
-    background-repeat: no-repeat;
-    
+    background-repeat: no-repeat;  
 `
 
 const Styleddiv = styled.div`
@@ -129,7 +126,7 @@ const Layout = styled.div`
     margin: auto;
     margin-top: 10rem ;
     background: rgba(255, 255, 255, 0.8);
-`;
+`
 
 const DetailButton = styled.button`
     background: ${props => props.primary ? "black" : "white"};

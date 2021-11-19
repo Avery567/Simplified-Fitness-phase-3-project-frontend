@@ -6,7 +6,7 @@ import React, {useEffect, useState } from "react";
 import {Route, useHistory} from "react-router-dom";
 
 
-function App() {
+function App() {  
 
   const potato = (data) => data.json()
   const [routines, setRoutines] = useState([])
@@ -16,17 +16,17 @@ function App() {
     fetch("http://localhost:9292/routines")
     .then(potato)
     .then(setRoutines)
-  },[])
+  }, [])
 
   const history = useHistory()
 
   const handleAddRoutine = (newRoutine) => {
     fetch('http://localhost:9292/routines', {
-        method:'POST',
-        headers: {
-            'Content-Type':'application/json',
-        },
-        body: JSON.stringify(newRoutine)
+      method:'POST',
+      headers: {
+          'Content-Type':'application/json',
+      },
+      body: JSON.stringify(newRoutine)
     }) 
     .then(potato)
     .then(newRoutineFromBackend => {
@@ -47,13 +47,12 @@ const handleAddExercise = (newExercise) => {
   .then(potato)
   .then(newExerciseFromBackend => {
     const updatedExercises =  [newExerciseFromBackend, ...exercises]
-        setExercise(updatedExercises)
-        history.push("/mainpage")
+    setExercise(updatedExercises)
+    history.push("/mainpage")
   })
 }
 
 const handleDelete = (id) => {
-  console.log(id);
   fetch(`http://localhost:9292/routines/${id}`, {
     method: 'DELETE',
     headers: {
@@ -72,10 +71,10 @@ const handleDelete = (id) => {
       <Route exact path = "/mainpage">
         <MainPage routines={routines} handleDelete={handleDelete}/>
       </Route>
-      <Route exact path="/newexercise">
+      <Route exact path= "/newexercise">
         <CreateExerciseForm handleAddExercise={handleAddExercise}/>
       </Route>
-      <Route exact path="/newroutine">
+      <Route exact path= "/newroutine">
         <CreateRoutineForm handleAddRoutine={handleAddRoutine}/>    
       </Route>
     </>
