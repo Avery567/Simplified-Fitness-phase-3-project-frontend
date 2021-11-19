@@ -64,7 +64,6 @@ const handleDelete = (id) => {
   .then(setRoutines)
 }
 
-
   return (
     <>
       <Route exact path = "/">

@@ -1,9 +1,14 @@
 import Routine from "./Routine";
 import DisplayDetails from "./DisplayDetails";
 import styled from "styled-components";
+import { useState } from "react";
 
 function RoutinesContainer ({routines,handleDelete}) {
-    // console.log(handleDelete)
+    // console.log(routines)
+    const [routineExercises, setRoutineExercises] = useState([])
+    const displayDetails = (routineExercises) => {
+        setRoutineExercises(routineExercises)
+    }
     return (
         <>
         <RoutineHeader>Routine List:</RoutineHeader>
@@ -14,9 +19,10 @@ function RoutinesContainer ({routines,handleDelete}) {
                 key={routine.id} 
                 routine={routine}
                 handleDelete={handleDelete}
+                displayDetails={displayDetails}
                 />)}
         </GridLayout>
-            <DisplayDetails />
+            <DisplayDetails routineExercises={routineExercises}/>
         </RoutineClass >
         </>
     )}
@@ -31,6 +37,12 @@ const GridLayout = styled.div`
     overflow-y: auto;
     height: 80vh;
     width: 80%;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid white;
+    border-radius: 3px;
+    box-shadow: 0 0 3px gray;
+    margin-left: 3rem;
+    margin-top: 1rem;
 `;
 
 const RoutineHeader = styled.h1`
@@ -38,7 +50,7 @@ const RoutineHeader = styled.h1`
     color: black;
     text-align: left;
     font-size: 1.8em;
-
+    margin-left: 2rem;
 `;
 
 const RoutineClass = styled.div`

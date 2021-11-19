@@ -1,22 +1,21 @@
 import styled from "styled-components";
 
 
-function Routine ({routine, handleDelete}) {
+function Routine ({routine, handleDelete, displayDetails}) {
+    
     return (
-
-    <RoutineBox>
-        {/* <img alt= "muscle-group" src={routine.routine_image}/> */}
+        <RoutineBox>
         <h3>{routine.routine_name}</h3>
         <RoutineContent>
             <li>Routine ID: {routine.id}</li>
             Focus: {routine.muscle_group} 
         </RoutineContent>
-        <DetailButton>Details</DetailButton>
+        <DetailButton onClick={() => displayDetails(routine.exercises)}>Details</DetailButton>
         <DetailButton onClick={() => handleDelete(routine.id)}>Delete</DetailButton>
         
     </RoutineBox>
     )}
-
+    
 export default Routine;
 
 const RoutineBox = styled.div`
