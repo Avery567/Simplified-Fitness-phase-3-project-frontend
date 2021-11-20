@@ -1,9 +1,11 @@
 import styled from "styled-components";
+// import DisplayDetails from "./DisplayDetails";
 
 
 function Routine ({routine, handleDelete, displayDetails}) {
-    
+
     return (
+        <>
         <RoutineBox>
         <h3>{routine.routine_name}</h3>
         <RoutineContent>
@@ -12,8 +14,9 @@ function Routine ({routine, handleDelete, displayDetails}) {
         </RoutineContent>
         <DetailButton onClick={() => displayDetails(routine.exercises)}>Details</DetailButton>
         <DetailButton onClick={() => handleDelete(routine.id)}>Delete</DetailButton>
-        
     </RoutineBox>
+
+     </>
     )}
     
 export default Routine;

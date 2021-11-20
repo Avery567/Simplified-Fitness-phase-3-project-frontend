@@ -1,21 +1,18 @@
 import RoutinesContainer from "./RoutinesContainer";
 import styled from "styled-components";
-import DisplayDetails from "./DisplayDetails";
-import React, { useEffect, useState } from "react";
+import ContactUs from "./ContactUs";
+import React from "react";
 import Header from "./Header";
-import CreateRoutineForm from "./CreateRoutineForm";
-import CreateExerciseForm from "./CreateExerciseForm";
-import {Route} from 'react-router-dom';
 
 
-function MainPage ({routines, handleDelete}) {
+function MainPage ({routines, exercises, handleDelete, deleteExercise}) {
 
     return (
         <>
             <Styleddiv>
             <Header />  
-            <RoutinesContainer routines={routines} handleDelete={handleDelete}/>
-            
+            <RoutinesContainer exercises={exercises} routines={routines} handleDelete={handleDelete} deleteExercise={deleteExercise}/>
+            <ContactUs/>
             </Styleddiv>
         </>
     );

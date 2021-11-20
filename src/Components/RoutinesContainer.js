@@ -1,14 +1,14 @@
 import Routine from "./Routine";
 import DisplayDetails from "./DisplayDetails";
 import styled from "styled-components";
-import { useState } from "react";
 
 function RoutinesContainer ({routines,handleDelete}) {
-    // console.log(routines)
-    const [routineExercises, setRoutineExercises] = useState([])
-    const displayDetails = (routineExercises) => {
-        setRoutineExercises(routineExercises)
+
+    const displayDetails = (exercises) => {
+ 
+    exercises.map(exercise => exercise)        
     }
+
     return (
         <>
         <RoutineHeader>Routine List:</RoutineHeader>
@@ -22,7 +22,7 @@ function RoutinesContainer ({routines,handleDelete}) {
                 displayDetails={displayDetails}
                 />)}
         </GridLayout>
-            <DisplayDetails routineExercises={routineExercises}/>
+        <DisplayDetails/>
         </RoutineClass >
         </>
     )}
