@@ -1,12 +1,15 @@
 import Routine from "./Routine";
 import DisplayDetails from "./DisplayDetails";
 import styled from "styled-components";
+import {useState} from "react";
 
 function RoutinesContainer ({routines,handleDelete}) {
 
-    const displayDetails = (exercises) => {
+    const [routineDetail, setRoutineDetails] = useState([])
+
+    const displayDetails = (routineDetail) => {
  
-    exercises.map(exercise => exercise)        
+        setRoutineDetails(routineDetail)        
     }
 
     return (
@@ -22,7 +25,7 @@ function RoutinesContainer ({routines,handleDelete}) {
                 displayDetails={displayDetails}
                 />)}
         </GridLayout>
-        <DisplayDetails/>
+        <DisplayDetails routineDetail={routineDetail}/>
         </RoutineClass >
         </>
     )}

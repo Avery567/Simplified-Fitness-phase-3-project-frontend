@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 
-function DisplayDetails ({}) {
+function DisplayDetails ({routineDetail}) {
 
+    console.log(routineDetail)
 
 
 // console.log(exercises)
@@ -40,8 +41,19 @@ function DisplayDetails ({}) {
 
     return (
     <Layout>
-        <>
-        </>
+  
+        <div>
+            {routineDetail.map(exercise => 
+                <>
+                    <ExerciseBox>
+                        <p>Exercise Name: {exercise.name}</p>
+                        <p>Instructions: {exercise.instructions}</p>
+                    </ExerciseBox>
+                </> 
+            )} 
+
+        </div>
+
     </Layout>
 
     );
@@ -65,25 +77,25 @@ const Layout = styled.div`
     background: rgba(255, 255, 255, 0.8);
     overflow: scroll;
 `;
-// const ExerciseBox = styled.div`
-//     overflow-y: scroll;
-//     margin: 48px auto 0;
-//     width: 650px;
-//     height: 125px;
-//     font-family: Quicksand, arial, sans-serif; 
-//     font-size: 1.25em;
-//     padding: 0.25em 1em;
-//     border: 2px solid palevioletred;
-//     border-radius: 3px;
-//     border: 2px solid WHITE;
-//     cursor: pointer;
-//     box-shadow: 0 0 3px gray;
-//     &:hover {
-//         outline: none;
-//         transform: scale(1.05);
-//         }
+const ExerciseBox = styled.div`
+    overflow-y: scroll;
+    margin: 48px auto 0;
+    width: 650px;
+    height: 125px;
+    font-family: Quicksand, arial, sans-serif; 
+    font-size: 1.25em;
+    padding: 0.25em 1em;
+    border: 2px solid palevioletred;
+    border-radius: 3px;
+    border: 2px solid WHITE;
+    cursor: pointer;
+    box-shadow: 0 0 3px gray;
+    &:hover {
+        outline: none;
+        transform: scale(1.05);
+        }
 
-// `;
+`;
 
 // const DetailButton = styled.button`
 //     background: ${props => props.primary ? "black" : "white"};
