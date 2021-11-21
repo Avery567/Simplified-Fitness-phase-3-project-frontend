@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-function Routine ({routine, handleDelete, displayDetails}) {
+function Routine ({routine, handleDelete, displayDetails, displayRoutineImage, isTrue}) {
 
     return (
         <RoutineBox>
@@ -11,8 +11,9 @@ function Routine ({routine, handleDelete, displayDetails}) {
                 Focus: {routine.muscle_group} 
             </RoutineContent>
             <DetailButton onClick={() => {
-                const routineAndExercises = [routine.routine_image, ...routine.exercises]
-                displayDetails(routineAndExercises)}}>
+                isTrue()
+                displayRoutineImage(routine.routine_image)
+                displayDetails(routine.exercises)}}>
                 Details
             </DetailButton>
             <DetailButton onClick={() => handleDelete(routine.id)}>Delete</DetailButton>

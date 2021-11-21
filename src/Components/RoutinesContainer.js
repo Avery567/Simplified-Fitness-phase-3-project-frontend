@@ -6,9 +6,18 @@ import { useState } from "react";
 function RoutinesContainer ({routines,handleDelete}) {
 
     const [routineExercises, setRoutineExercises] = useState([])
+    const [routineImage, setRoutineImage] = useState([])
+    const [clicked, setClicked] = useState(false)
 
     const displayDetails = (routineExercises) => {
         setRoutineExercises(routineExercises)
+    
+    }
+    const displayRoutineImage = (routineImage) => {
+        setRoutineImage(routineImage)
+    }
+    const isTrue = (clicked) => {
+        setClicked(clicked => !clicked)
     }
     return (
         <>
@@ -21,9 +30,11 @@ function RoutinesContainer ({routines,handleDelete}) {
                 routine={routine}
                 handleDelete={handleDelete}
                 displayDetails={displayDetails}
+                displayRoutineImage={displayRoutineImage}
+                isTrue={isTrue}
                 />)}
         </GridLayout>
-            <DisplayDetails routineExercises={routineExercises}/>
+            <DisplayDetails routineImage={routineImage} routineExercises={routineExercises}/>
         </RoutineClass >
         </>
     )}

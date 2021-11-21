@@ -2,14 +2,14 @@ import styled from "styled-components";
 import React from "react";
 
 
-function DisplayDetails ({routineExercises}) {
+function DisplayDetails ({routineExercises, routineImage}) {
     
     return (
         
         <Layout>
             <div>
-                {routineExercises[0] ? 
-                <img style={{margin: "2rem"}} alt="routineImage" src={routineExercises[0]}/> : 
+                {routineImage ? 
+                <img style={{margin: "2rem"}} alt="routineImage" src={routineImage}/> : 
                 <>
                 <p style={{color: "gray", marginTop: "20rem"}}>Click on a routine for more details</p><p>| 💪 | 🏋️ | 🏃‍♀️ |</p>
                 </>
