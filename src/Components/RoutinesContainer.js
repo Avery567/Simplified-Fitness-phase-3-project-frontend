@@ -23,6 +23,8 @@ function RoutinesContainer ({routines,handleDelete}) {
                 routine={routine}
                 handleDelete={handleDelete}
                 displayDetails={displayDetails}
+                displayRoutineImage={displayRoutineImage}
+                isTrue={isTrue}
                 />)}
         </GridLayout>
         <DisplayDetails routineDetail={routineDetail}/>

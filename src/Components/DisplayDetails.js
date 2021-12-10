@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
-
 function DisplayDetails ({routineDetail}) {
 
     console.log(routineDetail)
-
 
 // console.log(exercises)
 
@@ -59,12 +57,10 @@ function DisplayDetails ({routineDetail}) {
     );
 }
 
+
 export default DisplayDetails;
 
 const Layout = styled.div`
-    /* width: 50em;
-    height: 50em; */
-
     height: 80vh;
     width: 95%;
     border: 2px solid white;
@@ -72,7 +68,6 @@ const Layout = styled.div`
     box-shadow: 0 0 3px gray;
     float:right;
     text-align: center;
-    /* margin-right: 10rem; */
     margin: 1rem 1rem 1rem 1rem;
     background: rgba(255, 255, 255, 0.8);
     overflow: scroll;
@@ -94,7 +89,6 @@ const ExerciseBox = styled.div`
         outline: none;
         transform: scale(1.05);
         }
-
 `;
 
 // const DetailButton = styled.button`
@@ -113,3 +107,4 @@ const ExerciseBox = styled.div`
 //         transform: scale(1.05);
 //     }
 // `;
+

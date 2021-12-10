@@ -4,6 +4,7 @@ import {Link} from "react-router-dom"
 function Header () {
     return (
     <HeaderContainer>
+
         <Link to="/"style={{textDecoration:"none", color: "black"}} >
             Simplified Fitness
         </Link>
@@ -39,7 +40,6 @@ const NewButton = styled.button`
     color: ${props => props.primary ? "white" : "black"};
     font-family: 'Lobster', cursive;
     font-size: 0.4em;
-    // margin: 1em;
     padding: 0.2em 1em;
     border: 2px solid WHITE;
     border-radius: 3px;

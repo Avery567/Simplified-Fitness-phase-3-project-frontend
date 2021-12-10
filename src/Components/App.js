@@ -7,7 +7,7 @@ import React, {useEffect, useState } from "react";
 import {Route, useHistory} from "react-router-dom";
 
 
-function App() {
+function App() {  
 
   const potato = (data) => data.json()
   const [routines, setRoutines] = useState([])
@@ -17,7 +17,7 @@ function App() {
     fetch("http://localhost:9292/routines")
     .then(potato)
     .then(setRoutines)
-  },[])
+  }, [])
 
   useEffect(() => {
     fetch("http://localhost:9292/exercises")
@@ -29,11 +29,11 @@ function App() {
 
   const handleAddRoutine = (newRoutine) => {
     fetch('http://localhost:9292/routines', {
-        method:'POST',
-        headers: {
-            'Content-Type':'application/json',
-        },
-        body: JSON.stringify(newRoutine)
+      method:'POST',
+      headers: {
+          'Content-Type':'application/json',
+      },
+      body: JSON.stringify(newRoutine)
     }) 
     .then(potato)
     .then(newRoutineFromBackend => {
@@ -54,13 +54,13 @@ const handleAddExercise = (newExercise) => {
   .then(potato)
   .then(newExerciseFromBackend => {
     const updatedExercises =  [newExerciseFromBackend, ...exercises]
-        setExercise(updatedExercises)
-        history.push("/mainpage")
+    setExercise(updatedExercises)
+    history.push("/mainpage")
   })
 }
 
 const handleDelete = (id) => {
- 
+
   fetch(`http://localhost:9292/routines/${id}`, {
     method: 'DELETE',
     headers: {
@@ -83,9 +83,6 @@ const deleteExercise = (id) => {
   .then(setExercise(exercises.filter(exercise => exercise.id !== id)))
 }
 
-
-
-
   return (
     <>
       <Route exact path = "/">
@@ -94,10 +91,10 @@ const deleteExercise = (id) => {
       <Route exact path = "/mainpage">
         <MainPage exercises={exercises} routines={routines} handleDelete={handleDelete} deleteExercise={deleteExercise}/>
       </Route>
-      <Route exact path="/newexercise">
+      <Route exact path= "/newexercise">
         <CreateExerciseForm handleAddExercise={handleAddExercise}/>
       </Route>
-      <Route exact path="/newroutine">
+      <Route exact path= "/newroutine">
         <CreateRoutineForm handleAddRoutine={handleAddRoutine}/>    
       </Route>
       <Route exact path="/contactus">

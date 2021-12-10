@@ -25,7 +25,7 @@ const Styleddiv = styled.div`
     position: fixed;
     min-width: 100%;
     min-height: 100%;
-    background-size: contain;
+    background-size: cover;
     background-position: cover;
     h1{
         justify-content: center;
@@ -38,7 +38,7 @@ const Button = styled.button`
     font-size: 1.25em;
     margin: 2em;
     padding: 0.25em 1em;
-    border: 2px solid WHITE;
+    border: 2px solid white;
     border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 3px gray;
@@ -55,5 +55,5 @@ const LandingHeaderContainer = styled.div`
     font-family: 'Lobster', cursive;
     color: white;
     font-size: 10em;
-    margin: o.5em;
+    margin: .9em;
 `

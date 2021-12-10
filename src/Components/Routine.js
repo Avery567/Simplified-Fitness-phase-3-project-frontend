@@ -2,8 +2,8 @@ import styled from "styled-components";
 // import DisplayDetails from "./DisplayDetails";
 
 
-function Routine ({routine, handleDelete, displayDetails}) {
 
+function Routine ({routine, handleDelete, displayDetails}) {
     return (
         <>
         <RoutineBox>
@@ -58,7 +58,6 @@ const DetailButton = styled.button`
 `;
 
 const RoutineContent = styled.h5`
-    // background: ${props => props.primary ? "black" : "white"};
     color: ${props => props.primary ? "white" : "black"};
     font-family: 'Montagu Slab', serif;
     font-size: 1em;
