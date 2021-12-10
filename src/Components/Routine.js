@@ -1,24 +1,22 @@
 import styled from "styled-components";
+// import DisplayDetails from "./DisplayDetails";
 
-
-function Routine ({routine, handleDelete, displayDetails, displayRoutineImage, isTrue}) {
+function Routine ({routine, handleDelete, displayDetails}) {
 
     return (
+        <>
         <RoutineBox>
-            <h3 style={{fontSize: "1.30em" }}>{routine.routine_name}</h3>
-            <RoutineContent>
-                <li>Routine ID: {routine.id}</li>
-                Focus: {routine.muscle_group} 
-            </RoutineContent>
-            <DetailButton onClick={() => {
-                isTrue()
-                displayRoutineImage(routine.routine_image)
-                displayDetails(routine.exercises)}}>
-                Details
-            </DetailButton>
-            <DetailButton onClick={() => handleDelete(routine.id)}>Delete</DetailButton>
-        
-        </RoutineBox>
+        <h3>{routine.routine_name}</h3>
+        <RoutineContent>
+            <li>Routine ID: {routine.id}</li>
+            Focus: {routine.muscle_group} 
+        </RoutineContent>
+        <DetailButton onClick={() => displayDetails(routine.exercises)}>Details</DetailButton>
+        <DetailButton onClick={() => handleDelete(routine.id)}>Delete</DetailButton>
+    </RoutineBox>
+
+     </>
+
     )}
     
 export default Routine;

@@ -127,7 +127,7 @@ const DetailButton = styled.button`
     background: ${props => props.primary ? "black" : "white"};
     color: ${props => props.primary ? "white" : "black"};
     font-family: 'Lobster', cursive;
-    font-size: 1.25em;
+    font-size: 1.5em;
     margin: 0.5em;
     padding: 0.01em 0.5em;
     border: 2px solid WHITE;

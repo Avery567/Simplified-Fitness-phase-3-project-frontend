@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 function Header () {
     return (
     <HeaderContainer>
-        <Link to="/" style={{textDecoration: 'none', color:"white"}}>
+        <Link to="/"style={{textDecoration:"none", color: "black"}} >
             Simplified Fitness
         </Link>
         <Link to="/mainpage">
@@ -15,6 +15,9 @@ function Header () {
         </Link>
         <Link to="/newexercise">
         <NewButton>Add New Exercises</NewButton>
+        </Link>
+        <Link to="/contactus">
+        <NewButton>Contact Us</NewButton>
         </Link>
     </HeaderContainer>
 

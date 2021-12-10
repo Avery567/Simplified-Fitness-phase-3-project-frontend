@@ -1,32 +1,60 @@
 import styled from "styled-components";
-import React from "react";
 
 
-function DisplayDetails ({routineExercises, routineImage}) {
-    
+function DisplayDetails ({routineDetail}) {
+
+    console.log(routineDetail)
+
+// console.log(exercises)
+
+//     const [edit, setEdit] = useState(false)
+//     const [updatedExercises, setUpdatedExercises] = useState(exercise.instructions);
+
+//     const handleEditExercise = () => setEdit(!edit)
+
+//     const editExercise = () => {
+//         return(
+//             <>
+//             <label htmlFor="instructions">Instructions:</label> 
+//             <textarea name="instructions" />
+//             </>
+//         )
+//     }
+
+//   // value={updatedIng} 
+//             // onChange={e => updateIngredients(e, id)}
+
+//     const updateExercise = (e, id) => {
+//         const newExercise = e.target.value
+//         fetch(`http://localhost:9292/exercises/${id}`,{
+//             method: 'PATCH',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify({instructions: newExercise})
+//         })
+//         .then(setUpdatedExercises(updatedExercises))
+//     }
+
+
+
     return (
-        
-        <Layout>
-            <div>
-                {routineImage ? 
-                <img style={{margin: "2rem"}} alt="routineImage" src={routineImage}/> : 
+    <Layout>
+  
+        <div>
+            {routineDetail.map(exercise => 
                 <>
-                <p style={{color: "gray", marginTop: "20rem"}}>Click on a routine for more details</p><p>| 💪 | 🏋️ | 🏃‍♀️ |</p>
-                </>
-                }
-            </div>
-            <div>
-                {routineExercises.map(exercise => 
-                    <>
-                        <ExerciseBox>
-                            <p>Exercise Name: {exercise.name}</p>
-                            <p>Instructions: {exercise.instructions}</p>
-                        </ExerciseBox>
-                    </> 
-                )} 
-                
-            </div>
-        </Layout>
+                    <ExerciseBox>
+                        <p>Exercise Name: {exercise.name}</p>
+                        <p>Instructions: {exercise.instructions}</p>
+                    </ExerciseBox>
+                </> 
+            )} 
+
+        </div>
+
+    </Layout>
+
 
     );
 }
@@ -47,9 +75,10 @@ const Layout = styled.div`
     overflow: scroll;
 `;
 const ExerciseBox = styled.div`
+    overflow-y: scroll;
     margin: 48px auto 0;
     width: 650px;
-    height: 100px;
+    height: 125px;
     font-family: Quicksand, arial, sans-serif; 
     font-size: 1.25em;
     padding: 0.25em 1em;
@@ -62,4 +91,24 @@ const ExerciseBox = styled.div`
         outline: none;
         transform: scale(1.05);
         }
+
 `;
+
+// const DetailButton = styled.button`
+//     background: ${props => props.primary ? "black" : "white"};
+//     color: ${props => props.primary ? "white" : "black"};
+//     font-family: 'Lobster', cursive;
+//     font-size: 0.8em;
+//     margin: 0.5em;
+//     padding: 0.01em 0.5em;
+//     border: 2px solid WHITE;
+//     border-radius: 3px;
+//     cursor: pointer;
+//     box-shadow: 0 0 3px gray;
+//     &:hover {
+//         outline: none;
+//         transform: scale(1.05);
+//     }
+// `;
+
+

@@ -1,24 +1,18 @@
 import Routine from "./Routine";
 import DisplayDetails from "./DisplayDetails";
 import styled from "styled-components";
-import { useState } from "react";
+import {useState} from "react";
 
 function RoutinesContainer ({routines,handleDelete}) {
 
-    const [routineExercises, setRoutineExercises] = useState([])
-    const [routineImage, setRoutineImage] = useState([])
-    const [clicked, setClicked] = useState(false)
+    const [routineDetail, setRoutineDetails] = useState([])
 
-    const displayDetails = (routineExercises) => {
-        setRoutineExercises(routineExercises)
-    
+    const displayDetails = (routineDetail) => {
+ 
+        setRoutineDetails(routineDetail)        
+
     }
-    const displayRoutineImage = (routineImage) => {
-        setRoutineImage(routineImage)
-    }
-    const isTrue = (clicked) => {
-        setClicked(clicked => !clicked)
-    }
+
     return (
         <>
         <RoutineHeader>Routine List:</RoutineHeader>
@@ -34,7 +28,9 @@ function RoutinesContainer ({routines,handleDelete}) {
                 isTrue={isTrue}
                 />)}
         </GridLayout>
-            <DisplayDetails routineImage={routineImage} routineExercises={routineExercises}/>
+
+        <DisplayDetails routineDetail={routineDetail}/>
+
         </RoutineClass >
         </>
     )}

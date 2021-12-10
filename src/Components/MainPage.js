@@ -1,17 +1,18 @@
 import RoutinesContainer from "./RoutinesContainer";
 import styled from "styled-components";
+import ContactUs from "./ContactUs";
 import React from "react";
 import Header from "./Header";
 
 
-function MainPage ({routines, handleDelete}) {
+function MainPage ({routines, exercises, handleDelete, deleteExercise}) {
 
     return (
         <>
             <Styleddiv>
             <Header />  
-            <RoutinesContainer routines={routines} handleDelete={handleDelete}/>
-            
+            <RoutinesContainer exercises={exercises} routines={routines} handleDelete={handleDelete} deleteExercise={deleteExercise}/>
+            <ContactUs/>
             </Styleddiv>
         </>
     );
